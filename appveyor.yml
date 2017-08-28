@@ -23,8 +23,8 @@ build:
   verbosity: minimal
 
 test_script:  
+  - ps: $testResults = $env:APPVEYOR_BUILD_FOLDER\testResults.xml
   - dotnet test test\EventStore.ClientAPI.NetCore.Tests\EventStore.ClientAPI.NetCore.Tests.csproj --no-build --logger="trx;LogFileName=$testResults"
-  - ps: $env:APPVEYOR_BUILD_FOLDER\testResults.xml
   - ps: $wc = New-Object System.Net.WebClient
   - ps: $wc.UploadFile("https://ci.appveyor.com/api/testresults/mstest/$env:APPVEYOR_JOB_ID", $testResults)
 
