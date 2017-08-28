@@ -18,14 +18,15 @@ before_build:
   - msbuild /t:restore EventStore.ClientAPI.NetCore.sln
 
 build:
-  project: EventStore.ClientAPI.NetCore.sln /t:pack
+  project: EventStore.ClientAPI.NetCore.sln
+  publish_nuget: true
 
-#test_script:  
-#  - dotnet test test\EventStore.ClientAPI.NetCore.Tests\EventStore.ClientAPI.NetCore.Tests.csproj --no-build
+test_script:  
+  - dotnet test test\EventStore.ClientAPI.NetCore.Tests\EventStore.ClientAPI.NetCore.Tests.csproj --no-build
 
 
-artifacts: 
-  - path: '*.nupkg'
+#artifacts: 
+#  - path: '*.nupkg'
 
 # deploy:
 #   provider: NuGet
