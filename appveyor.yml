@@ -20,8 +20,8 @@ before_build:
 build:
   project: EventStore.ClientAPI.NetCore.sln /t:pack
 
-test_script:  
-  - dotnet test test\EventStore.ClientAPI.NetCore.Tests\EventStore.ClientAPI.NetCore.Tests.csproj --no-build
+#test_script:  
+#  - dotnet test test\EventStore.ClientAPI.NetCore.Tests\EventStore.ClientAPI.NetCore.Tests.csproj --no-build
 
 
 artifacts: 
