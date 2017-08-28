@@ -20,13 +20,11 @@ before_build:
 build:
   project: EventStore.ClientAPI.NetCore.sln
   publish_nuget: true
+  verbosity: minimal
 
 test_script:  
   - dotnet test test\EventStore.ClientAPI.NetCore.Tests\EventStore.ClientAPI.NetCore.Tests.csproj --no-build
 
-
-#artifacts: 
-#  - path: '*.nupkg'
 
 # deploy:
 #   provider: NuGet
